@@ -1,0 +1,13 @@
+C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\bin\Debug\ABCC.exe.config
+C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\bin\Debug\ABCC.exe
+C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\bin\Debug\ABCC.pdb
+C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\obj\Debug\ABCC.csproj.AssemblyReference.cache
+C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\obj\Debug\ABCC.csproj.SuggestedBindingRedirects.cache
+C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\obj\Debug\ABCC.Form1.resources
+C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\obj\Debug\ABCC.Properties.Resources.resources
+C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\obj\Debug\ABCC.csproj.GenerateResource.cache
+C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\obj\Debug\ABCC.csproj.CoreCompileInputs.cache
+C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\obj\Debug\ABCC.exe
+C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\obj\Debug\ABCC.pdb
+C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\obj\Debug\ABCC.Articulos.resources
+C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\obj\Debug\ABCC.consulta.resources
