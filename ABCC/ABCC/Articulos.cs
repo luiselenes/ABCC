@@ -39,16 +39,6 @@ namespace ABCC
             dtpbaja.Text=articulo.fecha_baja.ToString();
         }
 
-        //private void Articulos_Load(object sender, EventArgs e)
-        //{
-        //    ArticuloDB artdb = new ArticuloDB();
-        //    List<Articulo> artlit = artdb.Get();
-            
-        //    cbdepartamento
-        //    artlit..departamento.ToString();
-        //    cbclase.Text = artlit.clase.ToString();
-        //    cbfamilia.Text = artlit.familia.ToString();
-        //}
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
