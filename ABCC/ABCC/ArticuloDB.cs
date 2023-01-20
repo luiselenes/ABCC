@@ -42,7 +42,7 @@ namespace ABCC
                         art.stock = reader.GetDouble(8);
                         art.cantidad = reader.GetDouble(9);
                         art.descontinuado = reader.GetBoolean(10);
-                        //art.fecha_baja = reader.GetDateTime(11);
+                        art.fecha_baja = reader.GetDateTime(11);
 
 
                         articulos.Add(art);
@@ -58,6 +58,46 @@ namespace ABCC
 
             return articulos;
         }
+
+        public Articulo Get(int sku)
+        {
+            string query = "select * from Articulos where sku=1";
+            using (SqlConnection connection = new SqlConnection(connerctionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@sku", sku);
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    reader.Read();
+
+                        Articulo art = new Articulo();
+                        art.sku = reader.GetInt32(0);
+                        art.articulo = reader.GetString(1);
+                        art.marca = reader.GetString(2);
+                        art.modelo = reader.GetString(3);
+                        art.departamento = reader.GetInt32(4);
+                        art.clase = reader.GetInt32(5);
+                        art.familia = reader.GetInt32(6);
+                        art.fecha_alta = reader.GetDateTime(7);
+                        art.stock = reader.GetDouble(8);
+                        art.cantidad = reader.GetDouble(9);
+                        art.descontinuado = reader.GetBoolean(10);
+                        art.fecha_baja = reader.GetDateTime(11);
+                    
+                    reader.Close();
+                    connection.Close();
+                    return art;
+                    
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error en query " + ex.Message);
+                }
+            }
+        }
+
 
         public void Add(int sku, string articulo, string marca, string modelo,
                         int departamento, int clase, int familia, DateTime fecha_alta,
@@ -99,7 +139,7 @@ namespace ABCC
                        double stock, double cantidad, bool descontinuado, DateTime fecha_baja)
         {
             string query = "update articulos set " +
-                "articulo= @articulo," +
+                "articulo=@articulo," +
                 "marca=@marca," +
                 "modelo=@modelo," +
                 "idDepartamento=@idDepartamento," +
@@ -141,9 +181,7 @@ namespace ABCC
             }
         }
 
-        public void Delete(int sku, string articulo, string marca, string modelo,
-                      int departamento, int clase, int familia, DateTime fecha_alta,
-                      double stock, double cantidad, bool descontinuado, DateTime fecha_baja)
+        public void Delete(int sku)
         {
             string query = "Delete from articulos" +
                 " where sku=@sku";
@@ -192,7 +230,7 @@ namespace ABCC
                     art.stock = reader.GetDouble(8);
                     art.cantidad = reader.GetDouble(9);
                     art.descontinuado = reader.GetBoolean(10);
-                    //art.fecha_baja = reader.GetDateTime(11);
+                    art.fecha_baja = reader.GetDateTime(11);
                     reader.Close();
                     connection.Close();
                     return art;

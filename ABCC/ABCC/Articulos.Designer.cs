@@ -68,7 +68,6 @@
             this.cbdepartamento.Name = "cbdepartamento";
             this.cbdepartamento.Size = new System.Drawing.Size(286, 24);
             this.cbdepartamento.TabIndex = 1;
-            this.cbdepartamento.SelectedIndexChanged += new System.EventHandler(this.cbdepartamento_SelectedIndexChanged);
             // 
             // txtarticulo
             // 
@@ -290,8 +289,8 @@
             this.Controls.Add(this.cbdepartamento);
             this.Controls.Add(this.txtsku);
             this.Name = "Articulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Articulos";
-            this.Load += new System.EventHandler(this.Articulos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

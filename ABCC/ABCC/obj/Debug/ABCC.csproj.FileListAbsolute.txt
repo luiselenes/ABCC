@@ -11,3 +11,4 @@ C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\obj\Debug\ABCC.exe
 C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\obj\Debug\ABCC.pdb
 C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\obj\Debug\ABCC.Articulos.resources
 C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\obj\Debug\ABCC.consulta.resources
+C:\Users\Luis\Desktop\ABCC\ABCC\ABCC\obj\Debug\ABCC.Editar.resources

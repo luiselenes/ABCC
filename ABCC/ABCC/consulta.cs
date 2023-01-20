@@ -16,16 +16,22 @@ namespace ABCC
         {
             InitializeComponent();
         }
-
-        private void consulta_Load(object sender, EventArgs e)
+        private void btneditar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
+            DialogResult opcion;
 
 
+            opcion = MessageBox.Show("¿Seguro que desea actualiazar?", "Actualizar Articulo", MessageBoxButtons.YesNo);
+            if (opcion == DialogResult.Yes)
+            {
+                int? sku = Getsku();
+                if (sku != null)
+                {
+                    Editar frmedit = new Editar(sku);
+                    frmedit.ShowDialog();
+                    Refresh();
+                }
+            }
         }
         private void Refresh()
         {
@@ -33,14 +39,47 @@ namespace ABCC
             dataGridView2.DataSource = articuloDB.Get();
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
+   
 
         private void consulta_Load_1(object sender, EventArgs e)
         {
             Refresh();
 
         }
+        private int? Getsku() {
+            try
+            {
+                return int.Parse(
+                    dataGridView2.Rows[dataGridView2.CurrentRow.Index].Cells[0].Value.ToString());
+            }
+            catch { return null; }
+        }
+
+        private void btnborrar_Click(object sender, EventArgs e)
+        {
+            DialogResult opcion;
+            
+            
+            opcion =  MessageBox.Show("¿Seguro que desea eliminar?", "Eliminar Articulo", MessageBoxButtons.YesNo);
+            if (opcion == DialogResult.Yes)
+            {
+                int? sku = Getsku();
+                try
+                {
+                    if (sku != null)
+                    {
+                        ArticuloDB articuloDB = new ArticuloDB();
+                        articuloDB.Delete((int)sku);
+                        Refresh();
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("ocurrio un error al tratar de eliminar: " + ex.Message);
+                }
+            }
+        }
     }
 }
+
